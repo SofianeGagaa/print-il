@@ -1,5 +1,6 @@
+"use strict";
 
-//! ********** ENDOGENOUS SLIDES **********
+//! ********** CONSTANTS  **********
 
 const slides = [
 	{
@@ -20,6 +21,28 @@ const slides = [
 	}
 ]
 
+const LENGTH = slides.length ;
 
-const arrowLRight = document.querySelector(".arrow_right");
 const arrowLeft = document.querySelector(".arrow_left");
+const arrowRight = document.querySelector(".arrow_right");
+const img = document.querySelector(".banner-img");
+const text = document.querySelector("#banner p");
+const dots = document.querySelector(".dots");
+
+//! ********** VARIABLES **********
+
+let index = 0 ;
+
+//! ********** FUNCTIONS **********
+
+const slideLeft = () => (index - 1 + LENGTH) % LENGTH;
+const slideRight = () => (index + 1) % LENGTH;
+
+const addListeners = () => {
+  arrowLeft.addEventListener("click", slideLeft);
+  arrowRight.addEventListener("click", slideRight);
+}
+
+//! ********** MAIN **********
+
+addListeners();
