@@ -94,10 +94,9 @@ const slideLeft = () => {
 }
 
 /**
- * Increments the index i by 1, and updates the slider image and text.
- * The index wraps around to the start of the slides array if it becomes equal to the length of the array.
- * The slider dots are also updated to reflect the new index.
+* Augmente l'index i de 1, met à jour l'image et le texte du diaporama. * * L'index revient au début de l'array de diapositives si il atteint la longueur de l'array. Les points du diaporama sont également mis à jour pour refléter l'index actuel.
  */
+
 const slideRight = () => {
   currentSlide = (currentSlide + 1) % LENGTH;
 
@@ -105,10 +104,11 @@ const slideRight = () => {
 }
 
 /**
- * Adds two event listeners to the left and right arrow elements.
- * The left arrow element listener calls the slideLeft function when clicked.
- * The right arrow element listener calls the slideRight function when clicked.
+* Ajoute deux écouteurs d'événements aux éléments de flèche gauche et droite.
+* L'écouteur d'événement de la flèche gauche appelle la fonction slideLeft lorsqu'il est cliqué.
+L* 'écouteur d'événement de la flèche droite appelle la fonction slideRight lorsqu'il est cliqué
  */
+
 const addListeners = () => {
   rightArrowElement.addEventListener("click",  slideRight);
   leftArrowElement.addEventListener("click",  slideLeft);
